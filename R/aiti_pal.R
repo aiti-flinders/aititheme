@@ -70,7 +70,7 @@ regular_palette <- function(n) {
                  aititheme::aiti_greyblue,
                  aititheme::aiti_green,
                  aititheme::aiti_purple)
-  }   } else if (n == 9) {
+  } else if (n == 9) {
     palette <- c(aititheme::aiti_blue,
                  aititheme::aiti_darkblue,
                  aititheme::aiti_yellow,
@@ -81,5 +81,5 @@ regular_palette <- function(n) {
                  aititheme::aiti_purple,
                  aititheme::aiti_black)
   }
-  }
+}
 
