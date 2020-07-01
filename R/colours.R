@@ -34,6 +34,13 @@
 #'
 "aiti_yellow"
 
+#' Hex code for the colour: AITI Black
+#'
+#' #000000
+#'
+
+"aiti_black"
+
 #' A list of aiti colour sets
 #'
 #' "full": darkblue

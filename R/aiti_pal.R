@@ -13,7 +13,7 @@ aiti_pal <- function(n = 0,
                      reverse = FALSE,
                      faded = FALSE) {
 
-  if (n > 8) {
+  if (n > 9) {
     stop("aiti_pal only supports up to 8 colours")
   }
 
@@ -70,6 +70,16 @@ regular_palette <- function(n) {
                  aititheme::aiti_greyblue,
                  aititheme::aiti_green,
                  aititheme::aiti_purple)
+  }   } else if (n == 9) {
+    palette <- c(aititheme::aiti_blue,
+                 aititheme::aiti_darkblue,
+                 aititheme::aiti_yellow,
+                 aititheme::aiti_lightblue,
+                 aititheme::aiti_grey,
+                 aititheme::aiti_greyblue,
+                 aititheme::aiti_green,
+                 aititheme::aiti_purple,
+                 aititheme::aiti_black)
   }
   }
 
