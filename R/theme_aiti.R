@@ -27,11 +27,7 @@ theme_aiti <- function(base_size = 13,
     chart_type <- "normal"
   }
 
-  if(base_family != "sans") {
-    sysfonts::font_add_google("Roboto", "roboto")
-    showtext::showtext_auto()
-    base_family <- "roboto"
-  }
+
 
   if (chart_type == "normal") {
     ret <- theme_aiti_normal(base_size = base_size,
