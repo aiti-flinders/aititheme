@@ -20,7 +20,7 @@ aiti_geom_defaults <- function() {
       fill = 'orange',
       size = 0.75 / .pt))
   update_geom_defaults("line",
-    list(colour = aititheme::aiti_lightblue,
+    list(colour = aititheme::aiti_blue,
       size = 2.5 / .pt))
   update_geom_defaults("text",
     list(colour = "black",
@@ -70,7 +70,7 @@ aiti_geom_defaults <- function() {
       col = 'orange'))
 
   update_geom_defaults("rect",
-    list(fill = 'orange',
+    list(fill = aititheme::aiti_grey,
       col = 'orange'))
 
   update_geom_defaults("boxplot",
