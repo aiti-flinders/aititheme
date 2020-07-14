@@ -71,7 +71,7 @@ aiti_geom_defaults <- function() {
 
   update_geom_defaults("rect",
     list(fill = aititheme::aiti_grey,
-      col = 'orange'))
+      col = aititheme::aiti_grey))
 
   update_geom_defaults("boxplot",
     list(fill = 'orange',
