@@ -130,7 +130,7 @@ theme_aiti_base <- function(base_size = 13,
         margin = margin(b = half_line)
       ),
       plot.subtitle = element_text(
-        colour = aititheme::aiti_grey,
+        colour = aititheme::aiti_darkblue,
         hjust = 0,
         vjust = 1,
         margin = margin(t = 0,
