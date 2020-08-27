@@ -33,14 +33,6 @@ aiti_geom_defaults <- function() {
     list(colour = 'orange',
       size = 3 / .pt))
 
-  update_geom_defaults(ggrepel::GeomTextRepel,
-    list(size = 18 / .pt,
-      colour = "black"))
-
-  update_geom_defaults(ggrepel::GeomLabelRepel,
-    list(size = 18 / .pt,
-      fill = "white",
-      colour = 'orange'))
 
   update_geom_defaults("label",
     list(size = 18 / .pt,
@@ -93,4 +85,5 @@ aiti_geom_defaults <- function() {
   update_geom_defaults("tile",
     list(col = "white",
       fill = 'orange'))
+  
 }
