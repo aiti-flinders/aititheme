@@ -11,16 +11,16 @@ theme_aiti_base <- function(base_size = 13,
   ret <-
     theme(
       line = element_line(
-        colour = 'grey',
+        colour = aititheme::aiti_grey,
         size = base_line_size
       ),
       rect = element_rect(
         fill = "white",
-        colour = 'grey',
+        colour = aititheme::aiti_grey,
         size = base_rect_size
       ),
       text = element_text(
-        colour = "black",
+        colour = aititheme::aiti_darkblue,
         family = base_family,
         face = "plain",
         hjust = 0.5,
@@ -33,7 +33,7 @@ theme_aiti_base <- function(base_size = 13,
       ),
       axis.line = element_line(
         size = points_to_mm(1),
-        colour = "black"
+        colour = aititheme::aiti_darkblue
       ),
       axis.line.x = NULL,
       axis.line.y = NULL,
@@ -47,7 +47,7 @@ theme_aiti_base <- function(base_size = 13,
         hjust = 1),
       axis.text.y.right = element_text(margin = margin(l = base_size / 5),
         hjust = 0),
-      axis.ticks = element_line(colour = "black"),
+      axis.ticks = element_line(colour = aititheme::aiti_darkblue),
       axis.ticks.length = unit(half_line / 2, "pt"),
       axis.ticks.length.x = NULL,
       axis.ticks.length.x.top = NULL,
@@ -98,7 +98,7 @@ theme_aiti_base <- function(base_size = 13,
       panel.background = element_rect(fill = "white",
         colour = NA),
       panel.border = element_blank(),
-      panel.grid = element_line(colour = "grey"),
+      panel.grid = element_line(colour = aititheme::aiti_grey),
       panel.grid.minor = element_blank(),
       panel.spacing = unit(1,
         "lines"),

@@ -12,25 +12,25 @@ aiti_geom_defaults <- function() {
     list(colour = aititheme::aiti_darkblue,
       size = 6 / .pt))
   update_geom_defaults("bar",
-    list(colour = "white",
-      fill = 'orange',
+    list(colour = aititheme::aiti_darkblue,
+      fill = aititheme::aiti_darkblue,
       size = 0.75 / .pt))
   update_geom_defaults("col",
     list(colour = "white",
-      fill = 'orange',
+      fill = aititheme::aiti_blue,
       size = 0.75 / .pt))
   update_geom_defaults("line",
     list(colour = aititheme::aiti_blue,
       size = 2.5 / .pt))
   update_geom_defaults("text",
-    list(colour = "black",
+    list(colour = aititheme::aiti_black,
       size = 18 / .pt))
   update_geom_defaults("smooth",
-    list(colour = 'orange',
-      fill = 'orange'))
+    list(colour = aititheme::aiti_blue,
+      fill = aititheme::aiti_blue))
 
   update_geom_defaults("path",
-    list(colour = 'orange',
+    list(colour = aititheme::aiti_blue,
       size = 3 / .pt))
 
 
@@ -39,27 +39,27 @@ aiti_geom_defaults <- function() {
       fill = "white"))
 
   update_geom_defaults("area",
-    list(fill = 'orange',
-      col = 'orange'))
+    list(fill = aititheme::aiti_blue,
+      col = aititheme::aiti_blue))
 
   update_geom_defaults("density",
-    list(fill = 'orange',
-      col = 'orange'))
+    list(fill = aititheme::aiti_blue,
+      col = aititheme::aiti_blue))
 
   update_geom_defaults("dotplot",
-    list(fill = 'orange',
-      col = 'orange'))
+    list(fill = aititheme::aiti_blue,
+      col = aititheme::aiti_blue))
 
   update_geom_defaults("polygon",
-    list(fill = 'orange',
-      col = 'orange'))
+    list(fill = aititheme::aiti_blue,
+      col = aititheme::aiti_blue))
 
   update_geom_defaults("path",
-    list(col = 'orange'))
+    list(col = aititheme::aiti_blue))
 
   update_geom_defaults("ribbon",
-    list(fill = 'orange',
-      col = 'orange'))
+    list(fill = aititheme::aiti_blue,
+      col = aititheme::aiti_blue))
 
   update_geom_defaults("rect",
     list(fill = aititheme::aiti_grey,
