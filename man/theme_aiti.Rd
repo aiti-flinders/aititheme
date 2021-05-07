@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_aiti.R
 \name{theme_aiti}
 \alias{theme_aiti}
-\title{Title}
+\title{Theme a ggplot2 object - AITI style}
 \usage{
 theme_aiti(
   base_size = 13,
@@ -14,9 +14,21 @@ theme_aiti(
   panel_borders = FALSE
 )
 }
-\value{
+\arguments{
+\item{base_size}{font size}
 
+\item{base_family}{font family}
+
+\item{chart_type}{scatter or normal (default = normal)}
+
+\item{flipped}{NYI}
+
+\item{background}{NYI}
+
+\item{legend}{legend position}
+
+\item{panel_borders}{(logical) default FALSE}
 }
 \description{
-Title
+Theme a ggplot2 object - AITI style
 }

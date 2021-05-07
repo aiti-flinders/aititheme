@@ -1,23 +1,22 @@
-#' Title
+#' Generate a pallete of n colours from the AITI theme
 #'
-#' @param n
-#' @param reverse
-#' @param faded
+#' @param n number of colours to return
+#' @param reverse reverse the default colour order
+#' @param faded NYI
 #'
 #'
-#' @examples
 #'
-#' @export
+#' @export aiti_pal
 #'
 aiti_pal <- function(n = 0,
                      reverse = FALSE,
                      faded = FALSE) {
 
   if (n > 9) {
-    stop("aiti_pal only supports up to 8 colours")
+    stop("aiti_pal only supports up to 9 colours")
   }
 
-  if(isFALSE(faded)) {
+  if (isFALSE(faded)) {
     palette <- regular_palette(n)
   }
 

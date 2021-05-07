@@ -1,22 +1,18 @@
-#' Title
+#' Set manual colours
 #'
-#' @param n
-#' @param reverse
-#' @param discrete
-#' @param faded
-#' @param palette
-#' @param ...
+#' @param n number of colours
+#' @param reverse (logical) whether to reverse the order of the colours 
+#' @param discrete (logical) 
+#' @param faded (logical) NYI
+#' @param palette NYI
+#' @param ... other elements passed to ggplot2::scales
 #'
-#' @return
-#'
-#' @examples
 #'
 #' @name aiti_scale
-#' @aliases NULL
 #'
 #' @rdname aiti_scale
 #' @import ggplot2
-#' @export
+#' @export aiti_colour_manual
 aiti_colour_manual <- function(n = 0,
                                reverse = FALSE,
                                discrete = TRUE,

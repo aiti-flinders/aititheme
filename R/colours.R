@@ -41,8 +41,23 @@
 
 "aiti_black"
 
+#' Hex code for the colour: AITI Purple
+#' 
+#' #9999ff
+
+"aiti_purple"
+
+#' Hex code for the colour: AITI Green
+#' 
+#' #5aa2ae
+#' 
+
+"aiti_green"
+
 #' A list of aiti colour sets
 #'
 #' "full": darkblue
 #'
 "aiti_palette_set"
+
+

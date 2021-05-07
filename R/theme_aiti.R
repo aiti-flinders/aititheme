@@ -1,18 +1,17 @@
-#' Title
+#' Theme a ggplot2 object - AITI style
 #'
-#' @param base_size
-#' @param base_family
-#' @param chart_type
-#' @param flipped
-#' @param background
-#' @param legend
-#' @param panel_borders
+#' @param base_size font size
+#' @param base_family font family
+#' @param chart_type scatter or normal (default = normal)
+#' @param flipped NYI
+#' @param background NYI
+#' @param legend legend position 
+#' @param panel_borders (logical) default FALSE
 #' @import ggplot2
 #'
-#' @return
-#' @export
+#' @export theme_aiti
 #'
-#' @examples
+
 theme_aiti <- function(base_size = 13,
   base_family = "sans",
   chart_type = "normal",

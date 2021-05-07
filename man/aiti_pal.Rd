@@ -2,16 +2,17 @@
 % Please edit documentation in R/aiti_pal.R
 \name{aiti_pal}
 \alias{aiti_pal}
-\title{Title}
+\title{Generate a pallete of n colours from the AITI theme}
 \usage{
 aiti_pal(n = 0, reverse = FALSE, faded = FALSE)
 }
 \arguments{
-\item{faded}{}
+\item{n}{number of colours to return}
+
+\item{reverse}{reverse the default colour order}
+
+\item{faded}{NYI}
 }
 \description{
-Title
-}
-\examples{
-
+Generate a pallete of n colours from the AITI theme
 }
