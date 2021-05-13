@@ -18,7 +18,8 @@ theme_aiti_normal <- function(base_size = 13,
       axis.line.y = ggplot2::element_blank(),
       axis.ticks.y = ggplot2::element_blank(),
       axis.title.y = ggplot2::element_blank(),
-      panel.grid.major.x = ggplot2::element_blank()
+      panel.grid.major.x = ggplot2::element_blank(),
+      plot.background = ggplot2::element_rect(colour = "white")
     )
 
   # reverse when flipped = TRUE; only if type = 'normal'
