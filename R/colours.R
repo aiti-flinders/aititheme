@@ -54,9 +54,21 @@
 
 "aiti_green"
 
+#' Hex code for the colour: AITI Blue 2 (Blues set)
+#' 
+#' #0044AA
+"aiti_blue_2"
+
+#' Hex code for the colour: AITI Blue 4 (Blues set)
+#' 
+#' #56A1FC
+"aiti_blue_4"
+
+
 #' A list of aiti colour sets
 #'
 #' "full": darkblue
+#' "blues": 
 #'
 "aiti_palette_set"
 

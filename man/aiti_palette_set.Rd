@@ -12,5 +12,6 @@ aiti_palette_set
 }
 \description{
 "full": darkblue
+"blues":
 }
 \keyword{datasets}

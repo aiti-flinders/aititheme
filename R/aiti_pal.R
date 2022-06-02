@@ -18,8 +18,10 @@ aiti_pal <- function(n = 0,
 
   if (isFALSE(faded)) {
     palette <- regular_palette(n)
+  } else if (isTRUE(faded)) {
+    palette <- blue_palette(n)
   }
-
+  
   palette
 }
 
@@ -80,5 +82,12 @@ regular_palette <- function(n) {
                  aititheme::aiti_purple,
                  aititheme::aiti_black)
   }
+}
+
+blue_palette <- function(n) {
+  ramp <- grDevices::colorRampPalette(c(aititheme::aiti_darkblue, aititheme::aiti_blue_2, aititheme::aiti_blue))
+  
+  palette <- ramp(n)
+  
 }
 
