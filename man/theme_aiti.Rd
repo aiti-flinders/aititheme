@@ -5,8 +5,8 @@
 \title{Theme a ggplot2 object - AITI style}
 \usage{
 theme_aiti(
-  base_size = 13,
-  base_family = "sans",
+  base_size = 12,
+  base_family = "Roboto",
   chart_type = "normal",
   flipped = FALSE,
   background = "white",

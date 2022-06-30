@@ -121,7 +121,7 @@ theme_aiti_base <- function(base_size = 13,
       strip.switch.pad.wrap = unit(half_line / 2,
         "pt"),
       plot.background = element_rect(),
-      plot.title = element_text(
+      plot.title = ggtext::element_markdown(
         size = rel(1),
         hjust = 0,
         vjust = 1,
