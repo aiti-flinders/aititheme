@@ -12,13 +12,18 @@
 #' @export theme_aiti
 #'
 
-theme_aiti <- function(base_size = 13,
-  base_family = "sans",
+theme_aiti <- function(base_size = 12,
+  base_family = "Roboto",
   chart_type = "normal",
   flipped = FALSE,
   background = "white",
   legend = "none",
   panel_borders = FALSE) {
+  
+  if (!base_family %in% sysfonts::font_families()) {
+    message("Font family not available by default. Enabling")
+    enable_aiti_fonts()
+  }
 
   if (!chart_type %in% c("normal", "scatter")) {
     warning(paste0("Note: chart_type should be 'normal' or 'scatter', but you entered '",
