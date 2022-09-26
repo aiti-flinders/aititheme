@@ -21,7 +21,6 @@ theme_aiti <- function(base_size = 12,
   panel_borders = FALSE) {
   
   if (!base_family %in% sysfonts::font_families()) {
-    message("Font family not available by default. Enabling")
     enable_aiti_fonts()
   }
 

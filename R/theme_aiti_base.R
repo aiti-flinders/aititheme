@@ -1,13 +1,13 @@
 theme_aiti_base <- function(base_size = 13,
-  base_family = "sans",
-  base_line_size = points_to_mm(0.75),
-  base_rect_size = points_to_mm(1),
-  background = "white",
-  legend = "none",
-  panel_borders = FALSE) {
-
+                            base_family = "sans",
+                            base_line_size = points_to_mm(0.75),
+                            base_rect_size = points_to_mm(1),
+                            background = "white",
+                            legend = "none",
+                            panel_borders = FALSE) {
+  
   half_line <- base_size / 2
-
+  
   ret <-
     theme(
       line = element_line(
@@ -39,14 +39,14 @@ theme_aiti_base <- function(base_size = 13,
       axis.line.y = NULL,
       axis.text = element_text(size = rel(1)),
       axis.text.x = element_text(margin = margin(t = base_size / 5,
-        unit = "pt"),
-        vjust = 1),
+                                                 unit = "pt"),
+                                 vjust = 1),
       axis.text.x.top = element_text(margin = margin(b = base_size / 5),
-        vjust = 0),
+                                     vjust = 0),
       axis.text.y = element_text(margin = margin(r = base_size / 5),
-        hjust = 1),
+                                 hjust = 1),
       axis.text.y.right = element_text(margin = margin(l = base_size / 5),
-        hjust = 0),
+                                       hjust = 0),
       axis.ticks = element_line(colour = aititheme::aiti_black),
       axis.ticks.length = unit(half_line / 2, "pt"),
       axis.ticks.length.x = NULL,
@@ -57,19 +57,19 @@ theme_aiti_base <- function(base_size = 13,
       axis.ticks.length.y.right = NULL,
       axis.title = element_text(size = rel(1)),
       axis.title.x = element_text(margin = margin(t = half_line / 2),
-        vjust = 1),
+                                  vjust = 1),
       axis.title.x.top = element_text(margin = margin(b = half_line / 2),
-        vjust = 0),
+                                      vjust = 0),
       axis.title.y = element_text(
         angle = 90,
         margin = margin(r = half_line /
-            2),
+                          2),
         vjust = 1
       ),
       axis.title.y.right = element_text(
         angle = -90,
         margin = margin(l = half_line /
-            2),
+                          2),
         vjust = 0
       ),
       legend.background = element_rect(colour = NA),
@@ -78,12 +78,12 @@ theme_aiti_base <- function(base_size = 13,
       legend.spacing.y = NULL,
       legend.margin = margin(),
       legend.key = element_rect(fill = "white", colour = "white"),
-      legend.key.size = unit(3, "lines"),
+      legend.key.size = unit(1, "lines"),
       legend.key.height = NULL,
       legend.key.width = NULL,
       legend.text = element_text(size = rel(1),
-        margin = margin(l = 0,
-          r = base_size / 4, unit = "pt")),
+                                 margin = margin(l = 0,
+                                                 r = base_size / 4, unit = "pt")),
       legend.text.align = 0,
       legend.title = element_blank(),
       legend.title.align = NULL,
@@ -92,16 +92,16 @@ theme_aiti_base <- function(base_size = 13,
       legend.justification = "center",
       legend.box = "vertical",
       legend.box.margin = margin(0, 0,
-        0, 0, "cm"),
+                                 0, 0, "cm"),
       legend.box.background = element_blank(),
       legend.box.spacing = unit( half_line, "pt"),
       panel.background = element_rect(fill = "white",
-        colour = NA),
+                                      colour = NA),
       panel.border = element_blank(),
       panel.grid = element_line(colour = aititheme::aiti_grey),
       panel.grid.minor = element_blank(),
       panel.spacing = unit(1,
-        "lines"),
+                           "lines"),
       panel.spacing.x = NULL,
       panel.spacing.y = NULL,
       panel.ontop = FALSE,
@@ -109,7 +109,7 @@ theme_aiti_base <- function(base_size = 13,
       strip.text = element_text(
         size = rel(1),
         margin = margin(0.8 * half_line,
-          0.8 * half_line, 0.8 * half_line, 0.8 * half_line)
+                        0.8 * half_line, 0.8 * half_line, 0.8 * half_line)
       ),
       strip.text.x = NULL,
       strip.text.y = element_text(angle = -90),
@@ -117,9 +117,9 @@ theme_aiti_base <- function(base_size = 13,
       strip.placement.x = NULL,
       strip.placement.y = NULL,
       strip.switch.pad.grid = unit(half_line / 2,
-        "pt"),
+                                   "pt"),
       strip.switch.pad.wrap = unit(half_line / 2,
-        "pt"),
+                                   "pt"),
       plot.background = element_rect(),
       plot.title = ggtext::element_markdown(
         size = rel(1),
@@ -132,16 +132,12 @@ theme_aiti_base <- function(base_size = 13,
       plot.subtitle = ggtext::element_markdown(
         colour = aititheme::aiti_black,
         hjust = 0,
-        vjust = 1,
-        margin = margin(t = 0,
-          r = 0,
-          b = base_size * .75,
-          l = 0,
-          unit = "pt")
+        vjust = 1, 
+        lineheight = 1.2
       ),
       plot.caption = element_text(
         family = base_family,
-        size = rel(0.755),
+        size = rel(0.85),
         hjust = 0,
         vjust = 1,
         colour = aititheme::aiti_black,
@@ -157,7 +153,7 @@ theme_aiti_base <- function(base_size = 13,
       plot.margin = unit(c(0.5, 0.6, 0.1, 0.01), "lines"),
       complete = TRUE
     )
-
+  
   # add panel borders if the user requests them
   if (panel_borders) {
     ret <- ret %+replace%
@@ -168,14 +164,14 @@ theme_aiti_base <- function(base_size = 13,
         fill = NA
       ))
   }
-
-
+  
+  
   if (background == "orange" |  background == "box") {
     ret <- ret +
       ggplot2::theme(rect = element_rect(
         fill = "orange"))
   }
-
+  
   ret
-
+  
 }

@@ -43,7 +43,7 @@ scale_fill_aiti <- function(palette = "main",
   if (discrete) {
     discrete_scale("fill", paste0("aiti_", palette), palette = pal,)
   } else {
-    scale_fill_gradient_n(colours = pal(256), ...)
+    scale_fill_gradientn(colours = pal(256), ...)
   }
 }
 

@@ -7,8 +7,12 @@ aiti_colours <- function(...) {
     `grey` = aititheme::aiti_grey,
     `green` = aititheme::aiti_green,
     `purple` = aititheme::aiti_purple)
-  
+
 }
+
+# aiti_colours <- function(...) {
+#   c(`blue1` = )
+# }
 
 aiti_cols <- function(...) {
   cols <- c(...)
@@ -31,9 +35,9 @@ aiti_palettes <- function(palette = "main") {
   
   switch(palette,
          "main" = aiti_cols("dark blue", "blue", "yellow"),
-         "blue" = aiti_cols("dark blue", "highlight blue"),
+         "blue" = aiti_cols("dark blue", "blue"),
          "yellow" = aiti_cols("yellow", "highlight yellow"),
-         "mixed" = aiti_cols("blue", "green", "purple"))
+         "mixed" = aiti_cols("blue", "purple", "green"))
 }
 
 
