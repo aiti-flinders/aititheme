@@ -3,9 +3,9 @@ points_to_mm <- function(points) {
 }
 
 #showtext setup for Roboto
-enable_aiti_fonts <- function() {
+enable_aiti_fonts <- function(dpi = 72) {
   sysfonts::font_add_google("Roboto", "Roboto")
   showtext::showtext_auto()
-  showtext::showtext_opts(dpi = "96")
+  showtext::showtext_opts(dpi = {{dpi}})
   
 }

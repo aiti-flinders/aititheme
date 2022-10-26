@@ -2,33 +2,35 @@
 % Please edit documentation in R/theme_aiti.R
 \name{theme_aiti}
 \alias{theme_aiti}
-\title{Theme a ggplot2 object - AITI style}
+\title{AITI Theme}
 \usage{
 theme_aiti(
   base_size = 12,
+  color = "blue",
   base_family = "Roboto",
-  chart_type = "normal",
-  flipped = FALSE,
-  background = "white",
-  legend = "none",
-  panel_borders = FALSE
+  title_family = "Roboto"
 )
 }
 \arguments{
-\item{base_size}{font size}
+\item{base_size}{}
 
-\item{base_family}{font family}
+\item{color}{The background colour of the plot. One of \code{'blue', 'orange', 'yellow', 'grey'}.}
 
-\item{chart_type}{scatter or normal (default = normal)}
+\item{base_family}{}
 
-\item{flipped}{NYI}
+\item{title_family}{Plot title font family}
 
-\item{background}{NYI}
+\item{markdown}{Include \code{ggtext::element_markdown}}
+}
+\value{
 
-\item{legend}{legend position}
-
-\item{panel_borders}{(logical) default FALSE}
 }
 \description{
-Theme a ggplot2 object - AITI style
+Theme for plots in AITI publications, reports, Shiny Apps.
+}
+\details{
+This theme should be used with \code{\link{scale_colour_aiti()}}
+}
+\examples{
+
 }

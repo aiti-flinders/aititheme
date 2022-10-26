@@ -1,0 +1,2 @@
+bg: [{name: grey, value: '#efefef'}, {name: blue, value: '#edf6ff'},{name: yellow, value: '#fff4d2'}]
+palettes: {blue: [{name: b}]}
