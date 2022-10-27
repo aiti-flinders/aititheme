@@ -6,19 +6,20 @@
 \usage{
 theme_aiti(
   base_size = 12,
-  color = "blue",
-  base_family = "Roboto",
-  title_family = "Roboto"
+  colour = "blue",
+  base_family = "sans",
+  title_family = "mono",
+  flipped = FALSE
 )
 }
 \arguments{
 \item{base_size}{}
 
-\item{color}{The background colour of the plot. One of \code{'blue', 'orange', 'yellow', 'grey'}.}
-
 \item{base_family}{}
 
 \item{title_family}{Plot title font family}
+
+\item{color}{The background colour of the plot. One of \code{'blue', 'yellow', 'grey'}.}
 
 \item{markdown}{Include \code{ggtext::element_markdown}}
 }
