@@ -108,6 +108,7 @@ aiti_pal <- function(palette = "colours6") {
 #' @inheritParams ggplot2::scale_colour_hue
 #' @inheritParams aiti_pal
 #' @rdname scale_aiti
+#' @importFrom ggplot2 discrete_scale scale_colour_gradientn
 #' @export
 scale_colour_aiti <- function(palette = "colours6", 
                               discrete = TRUE,
