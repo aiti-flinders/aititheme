@@ -78,10 +78,20 @@ theme_aiti <- function(base_size = 12,
   
   if (markdown) {
     thm <- thm %+replace%
-      ggplot2::theme(plot.title = ggtext::element_markdown(),
-                     plot.subtitle = ggtext::element_markdown(),
-                     axis.title.x = ggtext::element_markdown(),
-                     axis.title.y = ggtext::element_markdown())
+      ggplot2::theme(
+        plot.title = ggtext::element_markdown(
+          hjust = 0,
+          vjust = 1,
+          face = "bold",
+          margin = margin(b = base_size / 2)
+        ),
+        plot.subtitle = ggtext::element_markdown(
+          hjust = 0,
+          vjust = 1,
+          lineheight = 1.2
+        ),
+        axis.title.x = ggtext::element_markdown(),
+        axis.title.y = ggtext::element_markdown())
   }
   
   thm
