@@ -9,6 +9,7 @@ theme_aiti(
   colour = "blue",
   base_family = "sans",
   title_family = "mono",
+  markdown = FALSE,
   flipped = FALSE
 )
 }
@@ -19,9 +20,11 @@ theme_aiti(
 
 \item{title_family}{Plot title font family}
 
-\item{color}{The background colour of the plot. One of \code{'blue', 'yellow', 'grey'}.}
-
 \item{markdown}{Include \code{ggtext::element_markdown}}
+
+\item{flipped}{}
+
+\item{color}{The background colour of the plot. One of \code{'blue', 'yellow', 'grey'}.}
 }
 \value{
 
