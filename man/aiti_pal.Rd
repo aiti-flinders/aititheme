@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_aiti.R
 \name{aiti_pal}
 \alias{aiti_pal}
-\title{Title}
+\title{AITI Palettes}
 \usage{
 aiti_pal(palette = "colours6")
 }
@@ -13,5 +13,5 @@ aiti_pal(palette = "colours6")
 
 }
 \description{
-Title
+AITI Palettes
 }

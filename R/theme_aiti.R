@@ -98,7 +98,7 @@ theme_aiti <- function(base_size = 12,
   
 }
 
-#' Title
+#' AITI Palettes
 #'
 #' @param palette 
 #'
