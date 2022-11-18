@@ -20,7 +20,7 @@
 #' 
 #' @importFrom ggplot2 element_line element_rect element_text element_blank rel margin unit
 #' @importFrom ggtext element_markdown
-theme_aiti <- function(base_size = 12,
+theme_aiti <- function(base_size = 10,
                        colour = "blue",
                        base_family = "sans",
                        title_family = "mono",
@@ -34,7 +34,9 @@ theme_aiti <- function(base_size = 12,
                    rect = element_rect(fill = bg_colour, 
                                        linetype = 0,
                                        colour = NA),
-                   text = element_text(colour = "black", lineheight = 0.9),
+                   text = element_text(colour = "black", 
+                                       lineheight = 0.9,
+                                       size = base_size),
                    axis.title = element_text(size = rel(1)), 
                    axis.title.x = element_text(margin = margin(t = 6),
                                                vjust = 1),
