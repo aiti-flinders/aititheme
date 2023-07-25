@@ -6,35 +6,27 @@
 \usage{
 theme_aiti(
   base_size = 12,
-  colour = "blue",
+  colour = "Soft Black",
   base_family = "sans",
-  title_family = "mono",
   markdown = FALSE,
   flipped = FALSE
 )
 }
 \arguments{
-\item{base_size}{}
+\item{base_size}{The base size of text elements of the plot.}
 
-\item{base_family}{}
+\item{colour}{The background colour of the plot.}
 
-\item{title_family}{Plot title font family}
+\item{base_family}{The base family of text elements of the plot. The AITI default font is Space Mono but this is not
+available on all systems (yet?).}
 
 \item{markdown}{Include \code{ggtext::element_markdown}}
 
-\item{flipped}{}
-
-\item{color}{The background colour of the plot. One of \code{'blue', 'yellow', 'grey'}.}
+\item{flipped}{TRUE to flip the y-axis guide lines to show on the x-axis instead.}
 }
 \value{
-
+ggplot2 theme
 }
 \description{
 Theme for plots in AITI publications, reports, Shiny Apps.
-}
-\details{
-This theme should be used with \code{\link{scale_colour_aiti()}}
-}
-\examples{
-
 }

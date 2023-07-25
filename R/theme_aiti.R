@@ -2,32 +2,39 @@
 #' 
 #' Theme for plots in AITI publications, reports, Shiny Apps.
 #' 
-#' This theme should be used with \code{\link{scale_colour_aiti()}}
 #' 
-#' @inheritParams ggplot2::theme_grey
 #'
-#' @param base_size 
-#' @param color The background colour of the plot. One of \code{'blue', 'yellow', 'grey'}.
-#' @param base_family 
-#' @param title_family Plot title font family
+#' @param base_size The base size of text elements of the plot. 
+#' @param colour The background colour of the plot. 
+#' @param base_family The base family of text elements of the plot. The AITI default font is Space Mono but this is not
+#' available on all systems (yet?).
 #' @param markdown Include \code{ggtext::element_markdown}
-#' @param flipped 
+#' @param flipped TRUE to flip the y-axis guide lines to show on the x-axis instead. 
 #'
-#' @return
+#' @return ggplot2 theme
 #' @export
 #'
-#' @examples
 #' 
-#' @importFrom ggplot2 element_line element_rect element_text element_blank rel margin unit
+#' @importFrom ggplot2 element_line element_rect element_text element_blank rel margin unit '%+replace%'
 #' @importFrom ggtext element_markdown
 theme_aiti <- function(base_size = 12,
-                       colour = "blue",
+                       colour = "Soft Black",
                        base_family = "sans",
-                       title_family = "mono",
                        markdown = FALSE,
                        flipped = FALSE) {
   
-  bg_colour <- aititheme::theme_data$aiti$bg[colour]
+  col <- aiti_colours[colour]
+  
+  if (base_family == "Space Mono") {
+    
+  }
+  
+  bg_colour <-grDevices::col2rgb(col) + (255 - grDevices::col2rgb(col))*0.8
+  
+  bg_colour <- grDevices::rgb(bg_colour[1],
+                              bg_colour[2],
+                              bg_colour[3],
+                              maxColorValue = 255)
   
   thm <- theme_foundation(base_size = base_size, base_family = base_family) +
     ggplot2::theme(line = element_line(linetype = 1, colour = "black", size = 0.25),
@@ -36,7 +43,8 @@ theme_aiti <- function(base_size = 12,
                                        colour = NA),
                    text = element_text(colour = "black", 
                                        lineheight = 0.9,
-                                       size = base_size),
+                                       size = base_size,
+                                       family = base_family),
                    axis.title = element_text(size = rel(1)), 
                    axis.title.x = element_text(margin = margin(t = 6),
                                                vjust = 1),
@@ -58,6 +66,9 @@ theme_aiti <- function(base_size = 12,
                    axis.ticks.length.y.left = NULL,
                    axis.ticks.length.y.right = NULL,
                    legend.background = element_rect(),
+                   legend.key.size = unit(8, "pt"),
+                   legend.text = element_text(size = rel(0.75)),
+                   legend.box.spacing = unit(0, "pt"),
                    legend.position = "bottom",
                    legend.direction = "horizontal",
                    legend.justification = "left",
@@ -100,57 +111,4 @@ theme_aiti <- function(base_size = 12,
   
 }
 
-#' AITI Palettes
-#'
-#' @param palette 
-#'
-#' @return
-#' @export
-#'
-#' @examples
-#' @importFrom scales manual_pal div_gradient_pal seq_gradient_pal
-aiti_pal <- function(palette = "colours6") {
-  palettes <- aititheme::theme_data[["aiti"]][["palettes"]] 
-  if (palette %in% names(palettes)) {
-    colours <- palettes[[palette]][["value"]]
-    max_n <- length(colours)
-    f <- manual_pal(unname(colours))
-    attr(f, "max_n") <- max_n
-    f
-  } else {
-    stop(sprintf("palette %s not a valid palette.", palette))
-  }
-  
-}
 
-#' AITI colour and fill scales
-#'
-#' @inheritParams ggplot2::scale_colour_hue
-#' @inheritParams aiti_pal
-#' @rdname scale_aiti
-#' @importFrom ggplot2 discrete_scale scale_colour_gradientn
-#' @export
-scale_colour_aiti <- function(palette = "colours6", 
-                              discrete = TRUE,
-                              ...) {
-  if (discrete) {
-    discrete_scale("colour", "aiti", aiti_pal(palette), ...)
-  } else {
-    scale_colour_gradientn(colours = pal(256), ...)
-    
-  }
-}
-
-
-#' @rdname scale_aiti
-#' @export
-scale_fill_aiti <- function(palette = "colours6", 
-                            discrete = TRUE, 
-                            ...) {
-  if (discrete) {
-    discrete_scale("fill", "aiti", aiti_pal(palette), ...)
-  } else {
-    scale_colour_gradientn(colours = pal(256), ...)
-    
-  }
-}
