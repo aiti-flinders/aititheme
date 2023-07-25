@@ -21,13 +21,10 @@ theme_aiti <- function(base_size = 12,
                        colour = "Soft Black",
                        base_family = "sans",
                        markdown = FALSE,
+                       legend = "none",
                        flipped = FALSE) {
   
-  col <- aiti_colours[colour]
-  
-  if (base_family == "Space Mono") {
-    
-  }
+  col <- aititheme::aiti_colours[colour]
   
   bg_colour <-grDevices::col2rgb(col) + (255 - grDevices::col2rgb(col))*0.8
   
@@ -66,7 +63,7 @@ theme_aiti <- function(base_size = 12,
                    axis.ticks.length.y.left = NULL,
                    axis.ticks.length.y.right = NULL,
                    legend.background = element_rect(),
-                   legend.key.size = unit(8, "pt"),
+                   legend.key.size = unit(32, "pt"),
                    legend.text = element_text(size = rel(0.75)),
                    legend.box.spacing = unit(0, "pt"),
                    legend.position = "bottom",
@@ -105,6 +102,13 @@ theme_aiti <- function(base_size = 12,
         ),
         axis.title.x = ggtext::element_markdown(),
         axis.title.y = ggtext::element_markdown())
+  }
+  
+  if (legend == "none") {
+    thm <- thm %+replace%
+      ggplot2::theme(
+        legend.position = "none"
+      )
   }
   
   thm
