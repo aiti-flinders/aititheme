@@ -24,6 +24,8 @@ theme_aiti <- function(base_size = 12,
                        legend = "none",
                        flipped = FALSE) {
   
+  stopifnot(legend %in% c("none", "top", "bottom", "left", "right"))
+  
   col <- aititheme::aiti_colours[colour]
   
   bg_colour <-grDevices::col2rgb(col) + (255 - grDevices::col2rgb(col))*0.8
@@ -106,9 +108,10 @@ theme_aiti <- function(base_size = 12,
   
   if (legend == "none") {
     thm <- thm %+replace%
-      ggplot2::theme(
-        legend.position = "none"
-      )
+      ggplot2::theme(legend.position = "none")
+  } else {
+    thm <- thm %+replace%
+      ggplot2::theme(legend.position = legend)
   }
   
   thm
