@@ -19,10 +19,10 @@
 #' @importFrom ggtext element_markdown
 theme_aiti <- function(base_size = 12,
                        colour = "Soft Black",
-                       base_family = "sans",
-                       markdown = FALSE,
                        legend = "none",
-                       flipped = FALSE) {
+                       markdown = FALSE,
+                       flipped = FALSE,
+                       legacy = FALSE) {
   
   stopifnot(legend %in% c("none", "top", "bottom", "left", "right"))
   
@@ -34,6 +34,8 @@ theme_aiti <- function(base_size = 12,
                               bg_colour[2],
                               bg_colour[3],
                               maxColorValue = 255)
+  
+  base_family <- if (legacy) "Roboto" else "Space Mono"
   
   thm <- theme_foundation(base_size = base_size, base_family = base_family) +
     ggplot2::theme(line = element_line(linetype = 1, colour = "black", size = 0.25),
