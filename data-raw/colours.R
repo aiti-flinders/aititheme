@@ -24,7 +24,7 @@ aiti_palettes <- list(
   `green` = aiti_cols(c("Sustainable Green", "Soft Black", "Laurel Green", "Concrete Grey")),
   `passive` = aiti_cols(c("Soft Black", "Laurel Green", "Concrete Grey")),
   `just orange` = aiti_cols(c("AITI Orange", "Just White")),
-  `just green` = aiti_cols(c("Sustainable Green", "Hard Black")),
+  `just green` = aiti_cols(c("Sustainable Green", "Laurel Green")),
   `legacy` = aiti_cols(c("Legacy Blue", "Legacy Blue Highlight"))
 )
 
