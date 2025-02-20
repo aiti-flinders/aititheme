@@ -80,7 +80,7 @@ theme_aiti <- function(base_size = 12,
                    panel.border = element_blank(),
                    panel.grid.minor = element_blank(),
                    plot.title = ggtext::element_textbox_simple(face = "bold"),
-                   plot.title = ggtext::element_textbox_simple(),
+                   plot.subtitle = ggtext::element_textbox_simple(),
                    plot.margin = unit(c(1,1,1,1), "lines"),
                    plot.caption = ggtext::element_textbox_simple(),
                    strip.background = element_rect()
