@@ -7,9 +7,10 @@
 theme_aiti(
   base_size = 12,
   colour = "Soft Black",
-  base_family = "sans",
+  legend = "none",
   markdown = FALSE,
-  flipped = FALSE
+  flipped = FALSE,
+  legacy = FALSE
 )
 }
 \arguments{
@@ -17,12 +18,13 @@ theme_aiti(
 
 \item{colour}{The background colour of the plot.}
 
-\item{base_family}{The base family of text elements of the plot. The AITI default font is Space Mono but this is not
-available on all systems (yet?).}
+\item{legend}{The position of the legend (default no legend)}
 
-\item{markdown}{Include \code{ggtext::element_markdown}}
+\item{markdown}{Whether to use markdown formatting for plot titles (default FALSE)}
 
 \item{flipped}{TRUE to flip the y-axis guide lines to show on the x-axis instead.}
+
+\item{legacy}{Whether to use legacy fonts}
 }
 \value{
 ggplot2 theme

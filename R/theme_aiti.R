@@ -6,10 +6,10 @@
 #'
 #' @param base_size The base size of text elements of the plot. 
 #' @param colour The background colour of the plot. 
-#' @param base_family The base family of text elements of the plot. The AITI default font is Space Mono but this is not
-#' available on all systems (yet?).
-#' @param markdown Include \code{ggtext::element_markdown}
 #' @param flipped TRUE to flip the y-axis guide lines to show on the x-axis instead. 
+#' @param legend The position of the legend (default no legend)
+#' @param markdown Whether to use markdown formatting for plot titles (default FALSE)
+#' @param legacy Whether to use legacy fonts
 #'
 #' @return ggplot2 theme
 #' @export
@@ -28,7 +28,7 @@ theme_aiti <- function(base_size = 12,
   
   col <- aititheme::aiti_colours[colour]
   
-  bg_colour <-grDevices::col2rgb(col) + (255 - grDevices::col2rgb(col))*0.8
+  bg_colour <-grDevices::col2rgb(col) + (255 - grDevices::col2rgb(col))*0.9
   
   bg_colour <- grDevices::rgb(bg_colour[1],
                               bg_colour[2],
@@ -79,8 +79,10 @@ theme_aiti <- function(base_size = 12,
                    panel.grid.major.x = element_blank(),
                    panel.border = element_blank(),
                    panel.grid.minor = element_blank(),
-                   plot.title = element_text(face = "bold", hjust = 0),
+                   plot.title = ggtext::element_textbox_simple(face = "bold"),
+                   plot.title = ggtext::element_textbox_simple(),
                    plot.margin = unit(c(1,1,1,1), "lines"),
+                   plot.caption = ggtext::element_textbox_simple(),
                    strip.background = element_rect()
     )
   
