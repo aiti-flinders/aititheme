@@ -4,6 +4,7 @@
 #' @param reverse TRUE to reverse the order of the colours
 #' @param ... Other arguments passed to `colorRampPalette()`
 #'
+#' @export
 #'
 aiti_pal <- function(palette = "main", reverse = FALSE, ...) {
   

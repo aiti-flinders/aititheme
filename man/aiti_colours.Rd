@@ -5,7 +5,7 @@
 \alias{aiti_colours}
 \title{AITI Colours}
 \format{
-An object of class \code{character} of length 9.
+An object of class \code{character} of length 11.
 }
 \usage{
 aiti_colours
