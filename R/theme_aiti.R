@@ -2,32 +2,40 @@
 #' 
 #' Theme for plots in AITI publications, reports, Shiny Apps.
 #' 
-#' This theme should be used with \code{\link{scale_colour_aiti()}}
 #' 
-#' @inheritParams ggplot2::theme_grey
 #'
-#' @param base_size 
-#' @param color The background colour of the plot. One of \code{'blue', 'yellow', 'grey'}.
-#' @param base_family 
-#' @param title_family Plot title font family
-#' @param markdown Include \code{ggtext::element_markdown}
-#' @param flipped 
+#' @param base_size The base size of text elements of the plot. 
+#' @param colour The background colour of the plot. 
+#' @param flipped TRUE to flip the y-axis guide lines to show on the x-axis instead. 
+#' @param legend The position of the legend (default no legend)
+#' @param markdown Whether to use markdown formatting for plot titles (default FALSE)
+#' @param legacy Whether to use legacy fonts
 #'
-#' @return
+#' @return ggplot2 theme
 #' @export
 #'
-#' @examples
 #' 
-#' @importFrom ggplot2 element_line element_rect element_text element_blank rel margin unit
+#' @importFrom ggplot2 element_line element_rect element_text element_blank rel margin unit '%+replace%'
 #' @importFrom ggtext element_markdown
 theme_aiti <- function(base_size = 12,
-                       colour = "blue",
-                       base_family = "sans",
-                       title_family = "mono",
+                       colour = "Soft Black",
+                       legend = "none",
                        markdown = FALSE,
-                       flipped = FALSE) {
+                       flipped = FALSE,
+                       legacy = FALSE) {
   
-  bg_colour <- aititheme::theme_data$aiti$bg[colour]
+  stopifnot(legend %in% c("none", "top", "bottom", "left", "right"))
+  
+  col <- aititheme::aiti_colours[colour]
+  
+  bg_colour <-grDevices::col2rgb(col) + (255 - grDevices::col2rgb(col))*0.9
+  
+  bg_colour <- grDevices::rgb(bg_colour[1],
+                              bg_colour[2],
+                              bg_colour[3],
+                              maxColorValue = 255)
+  
+  base_family <- if (legacy) "Roboto" else "Space Mono"
   
   thm <- theme_foundation(base_size = base_size, base_family = base_family) +
     ggplot2::theme(line = element_line(linetype = 1, colour = "black", size = 0.25),
@@ -36,7 +44,8 @@ theme_aiti <- function(base_size = 12,
                                        colour = NA),
                    text = element_text(colour = "black", 
                                        lineheight = 0.9,
-                                       size = base_size),
+                                       size = base_size,
+                                       family = base_family),
                    axis.title = element_text(size = rel(1)), 
                    axis.title.x = element_text(margin = margin(t = 6),
                                                vjust = 1),
@@ -58,6 +67,9 @@ theme_aiti <- function(base_size = 12,
                    axis.ticks.length.y.left = NULL,
                    axis.ticks.length.y.right = NULL,
                    legend.background = element_rect(),
+                   legend.key.size = unit(32, "pt"),
+                   legend.text = element_text(size = rel(0.75)),
+                   legend.box.spacing = unit(0, "pt"),
                    legend.position = "bottom",
                    legend.direction = "horizontal",
                    legend.justification = "left",
@@ -67,8 +79,10 @@ theme_aiti <- function(base_size = 12,
                    panel.grid.major.x = element_blank(),
                    panel.border = element_blank(),
                    panel.grid.minor = element_blank(),
-                   plot.title = element_text(face = "bold", hjust = 0),
+                   plot.title = ggtext::element_textbox_simple(face = "bold"),
+                   plot.title = ggtext::element_textbox_simple(),
                    plot.margin = unit(c(1,1,1,1), "lines"),
+                   plot.caption = ggtext::element_textbox_simple(),
                    strip.background = element_rect()
     )
   
@@ -96,61 +110,16 @@ theme_aiti <- function(base_size = 12,
         axis.title.y = ggtext::element_markdown())
   }
   
+  if (legend == "none") {
+    thm <- thm %+replace%
+      ggplot2::theme(legend.position = "none")
+  } else {
+    thm <- thm %+replace%
+      ggplot2::theme(legend.position = legend)
+  }
+  
   thm
   
 }
 
-#' AITI Palettes
-#'
-#' @param palette 
-#'
-#' @return
-#' @export
-#'
-#' @examples
-#' @importFrom scales manual_pal div_gradient_pal seq_gradient_pal
-aiti_pal <- function(palette = "colours6") {
-  palettes <- aititheme::theme_data[["aiti"]][["palettes"]] 
-  if (palette %in% names(palettes)) {
-    colours <- palettes[[palette]][["value"]]
-    max_n <- length(colours)
-    f <- manual_pal(unname(colours))
-    attr(f, "max_n") <- max_n
-    f
-  } else {
-    stop(sprintf("palette %s not a valid palette.", palette))
-  }
-  
-}
 
-#' AITI colour and fill scales
-#'
-#' @inheritParams ggplot2::scale_colour_hue
-#' @inheritParams aiti_pal
-#' @rdname scale_aiti
-#' @importFrom ggplot2 discrete_scale scale_colour_gradientn
-#' @export
-scale_colour_aiti <- function(palette = "colours6", 
-                              discrete = TRUE,
-                              ...) {
-  if (discrete) {
-    discrete_scale("colour", "aiti", aiti_pal(palette), ...)
-  } else {
-    scale_colour_gradientn(colours = pal(256), ...)
-    
-  }
-}
-
-
-#' @rdname scale_aiti
-#' @export
-scale_fill_aiti <- function(palette = "colours6", 
-                            discrete = TRUE, 
-                            ...) {
-  if (discrete) {
-    discrete_scale("fill", "aiti", aiti_pal(palette), ...)
-  } else {
-    scale_colour_gradientn(colours = pal(256), ...)
-    
-  }
-}

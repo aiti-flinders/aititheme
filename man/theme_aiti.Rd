@@ -6,35 +6,29 @@
 \usage{
 theme_aiti(
   base_size = 12,
-  colour = "blue",
-  base_family = "sans",
-  title_family = "mono",
+  colour = "Soft Black",
+  legend = "none",
   markdown = FALSE,
-  flipped = FALSE
+  flipped = FALSE,
+  legacy = FALSE
 )
 }
 \arguments{
-\item{base_size}{}
+\item{base_size}{The base size of text elements of the plot.}
 
-\item{base_family}{}
+\item{colour}{The background colour of the plot.}
 
-\item{title_family}{Plot title font family}
+\item{legend}{The position of the legend (default no legend)}
 
-\item{markdown}{Include \code{ggtext::element_markdown}}
+\item{markdown}{Whether to use markdown formatting for plot titles (default FALSE)}
 
-\item{flipped}{}
+\item{flipped}{TRUE to flip the y-axis guide lines to show on the x-axis instead.}
 
-\item{color}{The background colour of the plot. One of \code{'blue', 'yellow', 'grey'}.}
+\item{legacy}{Whether to use legacy fonts}
 }
 \value{
-
+ggplot2 theme
 }
 \description{
 Theme for plots in AITI publications, reports, Shiny Apps.
-}
-\details{
-This theme should be used with \code{\link{scale_colour_aiti()}}
-}
-\examples{
-
 }

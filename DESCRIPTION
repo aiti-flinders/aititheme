@@ -1,22 +1,24 @@
 Package: aititheme
-Title: What the Package Does (One Line, Title Case)
+Title: ggplot2 theme for Australian Industrial Transformation Institute
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Hamish",
            family = "Gamble",
            role = c("aut", "cre"),
            email = "hamish.gamble@flinders.edu.au",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+           comment = c(ORCID = "0000-0003-1277-1227"))
+Description: Provides colours, colour palettes, and a theme for making ggplot2 plots which match the AITI Style Guide.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.3.2
 Imports: 
-    magrittr,
     ggplot2,
     ggtext,
-    showtext,
-    sysfonts
+    cli,
+    scales,
+    grDevices
 Depends: 
-    R (>= 2.10)
+    R (>= 4.1.0)
+Suggests: 
+    showtext
